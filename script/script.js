@@ -103,6 +103,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
+    document.body.addEventListener('click', function(e) {
+        lanzarConfetiEnPosicion(e.clientX, e.clientY);
+    });
+
+    // Confetti al hacer clic
+    function lanzarConfetiEnPosicion(x, y) {
+        if (typeof confetti === 'function') {
+            confetti({
+                particleCount: 75, // Menos partículas para cada clic
+                spread: 60,
+                origin: { x: x / window.innerWidth, y: y / window.innerHeight }
+            });
+        } else {
+            console.log("Confetti.js no cargado. Revisa el enlace en el HTML.");
+        }
+    }
+
     setTimeout(lanzarConfettiInicial, 500);
 
     // Audio

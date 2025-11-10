@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Cumpleaños - Alex</title>
+
+    <link href="https://fonts.cdnfonts.com/css/oliver-2" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <audio id="musicaFondo" loop>
+        <source src="/music/Mario Party 1 OST - Play A Mini-Game.mp3" type="audio/mp3"> 
+    </audio>
+
+    <header class="page-header">
+        <h1>¡ESTAS INVITADO!</h1>
+        <p class="subtitulo">a mi cumpleaños</p>
+    </header>
+
+    <main class="content-wrapper">
+        
+        <section class="invitacion-section">
+            <div class="mini-me-wrap">
+                <img src="img/mini_me.png" alt="Niño con sombrero de cumpleaños" class="mini-me-img">
+            </div>
+            <div class="invitacion-img-frame">
+                <img src="img/invitacion.jpg" alt="Imagen de la Invitación" class="invitacion-img">
+            </div>
+        </section>
+
+        <section class="contador-section">
+            <h2 class="falta-poco">FALTA POCO!</h2>
+            <div class="contador" id="contador">
+                <div class="unidad">
+                    <span id="dias" class="numero">45</span>
+                    <span class="etiqueta">días</span>
+                </div>
+                <div class="unidad">
+                    <span id="horas" class="numero">00</span>
+                    <span class="etiqueta">horas</span>
+                </div>
+                <div class="unidad">
+                    <span id="minutos" class="numero">55</span>
+                    <span class="etiqueta">minutos</span>
+                </div>
+                <div class="unidad">
+                    <span id="segundos" class="numero">37</span>
+                    <span class="etiqueta">segundos</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="formulario-section">
+            <div class="formulario-container">
+                <h3>¿VIENES A CELEBRAR?</h3>
+                <form id="formularioAsistencia">
+                    <label for="nombre">nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    
+                    <label for="correo">email</label>
+                    <input type="email" id="correo" name="correo" placeholder="tu.correo@ejemplo.com" required>
+                    
+                    <button type="submit" id="btnConfirmar">ASISTIR!</button>
+                    <p id="mensajeFormulario"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <div class="footer-content">
+            <p class="footer-name">Soto Quiñonez Alex Eduardo</p>
+            <p class="footer-group-date">Grupo 01 | 09 noviembre 2025</p>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+/* --- 1. Estilos Generales --- */
+
+:root {
+    /* Para mandar a llamar las fuentes sin tener que repetir linea */
+    --font-oliver: 'Oliver', cursive, sans-serif;
+    --font-sfpro: 'SF Pro Display', sans-serif;
+}
+
+@keyframes moverFondo {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
+
+body {
+    font-family: var(--font-sfpro);
+    background-color: white; 
+    color: #000;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    min-height: 100vh;
+    padding: 0; 
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150"><path d="M50 0L61.8 35.3H98.8L69.1 57.7L80.9 92.9L50 70.6L19.1 92.9L30.9 57.7L1.2 35.3H38.2L50 0Z" fill="%23A3C8DA" opacity="0.6" transform="translate(10 10) scale(0.4)"/><path d="M50 0L61.8 35.3H98.8L69.1 57.7L80.9 92.9L50 70.6L19.1 92.9L30.9 57.7L1.2 35.3H38.2L50 0Z" fill="%23F2E697" opacity="0.7" transform="translate(80 80) scale(0.4)"/></svg>');
+    background-size: 150px; 
+    animation: moverFondo 90s linear infinite;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 400px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0; 
+    margin-top: 250px;
+    margin-bottom: 80px; 
+}
+
+
+/* --- 2. Header --- */
+
+.page-header {
+    background-color: #A3C8DA;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 20;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.page-header h1 {
+    font-family: var(--font-oliver); 
+    font-size: 2.5em; 
+    line-height: 1.1;
+    margin: 0;
+    color: black;
+}
+
+.page-header .subtitulo {
+    font-family: var(--font-sfpro);
+    font-weight: normal;
+    font-size: 1.2em;
+    margin: 5px 0 0 0;
+    color: black;
+}
+
+/* --- 3. Invitación --- */
+
+.invitacion-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.mini-me-wrap {
+    position: absolute;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 120px; 
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.mini-me-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.mini-me-wrap:hover {
+    transform: translateX(-50%) scale(1.1) rotate(5deg);
+}
+
+.invitacion-img-frame {
+    background-color: white;
+    padding: 10px; 
+    border: 3px solid #A3C8DA; 
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 20px); 
+    max-width: 380px; 
+    overflow: hidden; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 50px;
+}
+
+.invitacion-img {
+    width: 100%;
+    height: auto; 
+    display: block;
+}
+
+.invitacion-img-frame:hover {
+    transform: scale(1.02);
+}
+
+/* --- 4. Contador --- */
+
+.contador-section {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.falta-poco {
+    font-family: var(--font-oliver);
+    font-weight: normal;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.contador {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.unidad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+    background-color: #F2E697;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.numero {
+    font-family: var(--font-oliver);
+    font-weight: normal;
+    font-size: 2.2em; 
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.etiqueta {
+    font-family: var(--font-sfpro);
+    font-weight: normal;
+    font-size: 0.9em;
+    text-transform: none;
+    color: #000;
+}
+
+/* --- 5. Formulario  --- */
+
+.formulario-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.formulario-container {
+    background-color: #A3C8DA;
+    border: 3px solid #A3C8DA;
+    border-radius: 15px;
+    padding: 25px 30px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.formulario-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.formulario-container h3 {
+    font-family: var(--font-oliver);
+    font-weight: normal;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.formulario-container label {
+    align-self: flex-start;
+    font-family: var(--font-sfpro);
+    font-weight: normal;
+    text-transform: none;
+    font-size: 0.9em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #000;
+    display: block; 
+    text-align: left;
+}
+
+.formulario-container input {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid white; 
+    border-radius: 8px;
+    font-family: var(--font-sfpro);
+    font-size: 1em;
+    width: 100%; 
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+}
+
+.formulario-container button {
+    background-color: white; 
+    color: #A3C8DA;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-family: var(--font-oliver);
+    font-weight: normal;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-container button:hover {
+    background-color: #e0e0e0; 
+    color: #A3C8DA;
+}
+
+.formulario-container button:disabled {
+    background-color: #4CAF50 !important; 
+    color: white !important;
+    cursor: not-allowed;
+}
+
+#mensajeFormulario {
+    margin-top: 15px;
+    font-family: var(--font-sfpro);
+    font-weight: normal;
+    color: #000;
+    font-size: 0.9em;
+}
+
+/* --- 6. Footer --- */
+
+.page-footer {
+    background-color: #F2E697;
+    color: black;
+    padding: 15px 0;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.footer-name {
+    margin: 0;
+    line-height: 1.2;
+    font-family: var(--font-sfpro);
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.footer-group-date {
+    margin: 0;
+    line-height: 1.2;
+    font-family: var(--font-sfpro);
+    font-size: 0.8em;
+}
+
+/* --- 7. Responsividad --- */
+
+@media (max-width: 500px) {
+    .content-wrapper {
+        padding: 10px 0;
+        margin-top: 180px;
+        margin-bottom: 60px; 
+    }
+
+    .page-header {
+        padding: 15px 0;
+    }
+    .page-header h1 {
+        font-size: 2em;
+    }
+    .page-header .subtitulo {
+        font-size: 1em;
+    }
+
+    .mini-me-wrap {
+        width: 100px;
+        top: -120px;
+    }
+
+    .invitacion-img-frame {
+        padding: 8px;
+    }
+    
+    .contador {
+        gap: 5px;
+    }
+
+    .falta-poco {
+        font-size: 1.5em;
+    }
+    .numero {
+        font-size: 1.8em;
+        padding: 8px 12px;
+    }
+    .etiqueta {
+        font-size: 0.7em;
+    }
+
+    .formulario-container {
+        padding: 20px;
+    }
+    .formulario-container h3 {
+        font-size: 1.3em;
+    }
+    .formulario-container button {
+        padding: 12px 20px;
+        font-size: 1.1em;
+    }
+
+    .page-footer {
+        padding: 10px 0;
+    }
+    .page-footer p {
+        font-size: 0.7em;
+    }
+}
